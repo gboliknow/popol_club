@@ -22,6 +22,10 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 Spacer(),
+                Image.asset(
+                  "assets/images/logo.png",
+                  height: 100,
+                ),
                 Text(
                   "Popol Club",
                   style: TextStyle(

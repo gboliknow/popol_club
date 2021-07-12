@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:popl_club_8/sign_in/my_header.dart';
+import 'package:popl_club_8/components/my_header.dart';
+
 import 'package:popl_club_8/sign_up/screen.dart';
 
 class SignIn extends StatefulWidget {

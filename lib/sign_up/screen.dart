@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:popl_club_8/sign_in/my_header.dart';
+import 'package:popl_club_8/components/my_header.dart';
+import 'package:popl_club_8/home/homescreen.dart';
+
 import 'package:popl_club_8/sign_in/screen.dart';
 
 class SignUp extends StatefulWidget {
@@ -144,7 +146,16 @@ class _SignUpState extends State<SignUp> {
               height: 35,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
+                  ),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 decoration: BoxDecoration(

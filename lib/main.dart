@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:popl_club_8/sign_in/screen.dart';
-import 'package:popl_club_8/sign_up/screen.dart';
 import 'package:popl_club_8/welcome/welcome.dart';
 
 void main() {
