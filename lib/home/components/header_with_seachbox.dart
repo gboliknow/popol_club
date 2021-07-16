@@ -25,7 +25,7 @@ class HeaderWithSearchBox extends StatelessWidget {
         ),
       ),
       // It will cover 20% of our total height
-      height: size.height * 0.2,
+      height: size.height * 0.3,
       child: Stack(
         children: <Widget>[
           Container(
@@ -43,7 +43,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 65,
+            top: size.height * 0.20,
             left: 0,
             right: 0,
             child: Container(

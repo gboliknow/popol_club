@@ -13,65 +13,69 @@ class Body extends StatelessWidget {
     // It will provie us total height  and width of our screen
     Size size = MediaQuery.of(context).size;
     // it enable scrolling on small device
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(),
-          SpecialProducts(),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Featured Product",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          topLeft: Radius.circular(20),
-                        )),
-                    child: Text(
-                      "View all ",
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.normal),
-                    ),
-                  ),
-                )
-              ],
+    return Container(
+      color: Color(0xFFFCE4EC),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            HeaderWithSearchBox(size: size),
+            TitleWithMoreBtn(),
+            SizedBox(
+              height: 35,
             ),
-          ),
-          ProductWidget(
-            price: "5.7",
-            country: "Japan",
-            name: "Condoms F/M",
-            heroTag: "ico",
-            productImage: "assets/images/avater3.png",
-          ),
-          ProductWidget(
-            price: "5.7",
-            country: "Japan",
-            name: "Pregnancy Test",
-            heroTag: "ico",
-            productImage: "assets/images/avater2.png",
-          ),
-          ProductWidget(
-            price: "5.7",
-            country: "Japan",
-            name: "Self Test",
-            heroTag: "ico",
-            productImage: "assets/images/avater3.png",
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                "Special Product",
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SpecialProducts(),
+            Container(
+              padding: EdgeInsets.only(left: 20),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Featured Product",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                          )),
+                      child: Text(
+                        "View all ",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.normal),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            ProductWidget(
+              name: "Condoms F/M",
+              productImage: "assets/images/Group.png",
+            ),
+            ProductWidget(
+              name: "Pregnancy Test",
+              productImage: "assets/images/avater2.png",
+            ),
+            ProductWidget(
+              name: "Self Test",
+              productImage: "assets/images/avater3.png",
+            ),
+          ],
+        ),
       ),
     );
   }

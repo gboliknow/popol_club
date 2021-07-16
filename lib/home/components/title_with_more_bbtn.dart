@@ -23,44 +23,76 @@ class TitleWithMoreBtn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 color: Color(0xFFD81B60),
               ),
-              padding: EdgeInsets.all(8),
+              padding: EdgeInsets.only(
+                top: 8,
+                bottom: 8,
+                left: 20,
+                right: 20,
+              ),
               child: Text(
                 "Self Test",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
-            FlatButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+            SizedBox(
+              width: 10,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Color(0xFFF8BBD0).withOpacity(0.5),
               ),
-              color: kPrimaryColor,
-              onPressed: press,
+              padding: EdgeInsets.only(
+                top: 8,
+                bottom: 8,
+                left: 20,
+                right: 20,
+              ),
               child: Text(
-                "Condoms F/M ",
-                style: TextStyle(color: Colors.black),
+                "Condoms F/M",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
             ),
-            FlatButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+            SizedBox(
+              width: 10,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Color(0xFFF8BBD0).withOpacity(0.5),
               ),
-              color: kPrimaryColor,
-              onPressed: press,
+              padding: EdgeInsets.only(
+                top: 8,
+                bottom: 8,
+                left: 20,
+                right: 20,
+              ),
               child: Text(
                 "Pregnancy test",
-                style: TextStyle(color: Colors.black),
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
             ),
-            FlatButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+            SizedBox(
+              width: 10,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Color(0xFFF8BBD0).withOpacity(0.5),
               ),
-              color: kPrimaryColor,
-              onPressed: press,
+              padding: EdgeInsets.only(
+                top: 8,
+                bottom: 8,
+                left: 20,
+                right: 20,
+              ),
               child: Text(
                 "HIV test",
-                style: TextStyle(color: Colors.black),
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
             ),
           ],

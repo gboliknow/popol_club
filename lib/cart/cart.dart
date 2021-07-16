@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:popl_club_8/cart/place_order.dart';
 import 'package:popl_club_8/components/constants.dart';
 
+import 'package:popl_club_8/home/tabs_screen.dart';
+
 class Cart extends StatelessWidget {
+  final int dollars = 100;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +13,16 @@ class Cart extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return TabsScreen();
+                },
+              ),
+            );
+          },
           icon: Icon(
             Icons.arrow_back_ios,
             color: kPrimaryColor,
@@ -31,7 +43,11 @@ class Cart extends StatelessWidget {
         padding: const EdgeInsets.all(22.0),
         child: Column(
           children: [
-            Expanded(flex: 9, child: Center()),
+            Expanded(
+                flex: 9,
+                child: Center(
+                  child: Image.asset("assets/images/cart.png"),
+                )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -40,7 +56,7 @@ class Cart extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
                 ),
                 Text(
-                  "N100",
+                  "\$$dollars",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
                 ),
               ],
@@ -60,7 +76,7 @@ class Cart extends StatelessWidget {
               height: 49,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) {

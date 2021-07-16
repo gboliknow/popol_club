@@ -12,7 +12,6 @@ class _SignInState extends State<SignIn> {
   bool _passwordVisible = false;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xFFFCE4EC),
       body: SingleChildScrollView(
@@ -21,7 +20,7 @@ class _SignInState extends State<SignIn> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             MyHeader(
               image: "assets/icons/coronadr.svg",
-              textTop: "SIGN IN",
+              textTop: "Sign In",
               textBottom: "Sign In to access your App",
             ),
             Form(

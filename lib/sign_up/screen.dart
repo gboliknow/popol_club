@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:popl_club_8/components/my_header.dart';
-import 'package:popl_club_8/home/homescreen.dart';
+
+import 'package:popl_club_8/home/tabs_screen.dart';
 
 import 'package:popl_club_8/sign_in/screen.dart';
 
@@ -10,9 +11,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  bool _passwordVisible = false;
   @override
   Widget build(BuildContext context) {
-    bool _passwordVisible = false;
     return Scaffold(
       backgroundColor: Color(0xFFFCE4EC),
       body: SingleChildScrollView(
@@ -21,7 +22,7 @@ class _SignUpState extends State<SignUp> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             MyHeader(
               image: "assets/icons/coronadr.svg",
-              textTop: "SIGN UP",
+              textTop: "Sign Up",
               textBottom: "To sign up to App, Create a Free account",
             ),
             Form(
@@ -151,7 +152,7 @@ class _SignUpState extends State<SignUp> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return HomeScreen();
+                      return TabsScreen();
                     },
                   ),
                 );

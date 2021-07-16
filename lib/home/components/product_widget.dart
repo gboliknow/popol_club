@@ -19,7 +19,6 @@ class ProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Stack(
@@ -31,7 +30,7 @@ class ProductWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(30),
+                bottomRight: Radius.circular(50),
                 topLeft: Radius.circular(50),
                 bottomLeft: Radius.circular(50),
               ),
