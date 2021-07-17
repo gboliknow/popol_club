@@ -13,8 +13,8 @@ class Track extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
         elevation: 0,
+        backgroundColor: Colors.grey[300],
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -26,7 +26,7 @@ class Track extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(28.0),
+        padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
             children: [

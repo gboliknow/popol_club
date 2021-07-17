@@ -19,6 +19,20 @@ class Background extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           child,
+          Positioned(
+              top: -35,
+              left: -85,
+              child: Image.asset(
+                "assets/images/spiral.png",
+                width: size.width * 0.6,
+              )),
+          Positioned(
+              bottom: -45,
+              right: -85,
+              child: Image.asset(
+                "assets/images/spiral.png",
+                width: size.width * 0.6,
+              )),
         ],
       ),
     );

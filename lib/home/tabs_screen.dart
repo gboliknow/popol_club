@@ -1,12 +1,16 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 import 'package:popl_club_8/cart/cart.dart';
+import 'package:popl_club_8/cart/place_order.dart';
 import 'package:popl_club_8/chat_blog/blog.dart';
 import 'package:popl_club_8/chat_blog/chat.dart';
+import 'package:popl_club_8/chat_blog/who_are_we.dart';
 import 'package:popl_club_8/components/constants.dart';
 
 import 'package:popl_club_8/home/components/body.dart';
+import 'package:popl_club_8/package/finish.dart';
 
 import 'package:popl_club_8/package/user_profile.dart';
 import 'package:popl_club_8/payment/card_info.dart';
@@ -91,9 +95,7 @@ class _TabsScreenState extends State<TabsScreen> {
           : AppBar(
               elevation: 0,
               leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () {},
                 icon: Icon(Icons.arrow_back_ios, color: Colors.black),
               ),
               title: Text(
@@ -236,7 +238,18 @@ Drawer buildDrawer(BuildContext context) {
             color: kPrimaryColor,
           ),
           title: Text('Who we are'),
-          trailing: Icon(Icons.arrow_forward_ios),
+          trailing: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WhoAreWe();
+                    },
+                  ),
+                );
+              },
+              child: Icon(Icons.arrow_forward_ios)),
         ),
         ListTile(
           leading: Icon(
@@ -308,15 +321,15 @@ void _startAddNewTransaction(BuildContext ctx) {
           behavior: HitTestBehavior.opaque,
           child: Container(
               padding: EdgeInsets.only(
-                top: 25,
-                left: 25,
-                right: 25,
-                bottom: 25,
+                top: 15,
+                left: 15,
+                right: 15,
+                bottom: 15,
               ),
               child: Column(
                 children: [
                   Expanded(
-                    flex: 3,
+                    flex: 4,
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.black38,
@@ -332,68 +345,58 @@ void _startAddNewTransaction(BuildContext ctx) {
                     ),
                   ),
                   Expanded(
-                    flex: 1,
-                    child: GestureDetector(
-                      child: Container(
-                        padding: EdgeInsets.only(
-                          left: kDefaultPadding / 2,
-                          top: kDefaultPadding / 2,
-                          bottom: kDefaultPadding / 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
+                    flex: 2,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "Update\n",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: "Self Test",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 17,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        child: Row(
-                          children: <Widget>[
-                            RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Update\n",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: "Self Test",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 24,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Spacer(),
-                            Container(
-                              padding: EdgeInsets.all(5),
-                              child: Text(
-                                "Price: \$$dollars",
-                                style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
+                        Spacer(),
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          child: Text(
+                            "Price: \$$dollars",
+                            style: TextStyle(
+                                color: kPrimaryColor,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
                   Expanded(
-                      flex: 1,
+                      flex: 2,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            padding: EdgeInsets.all(0),
-                            decoration: BoxDecoration(
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.all(0),
+                              decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
                                   color: kPrimaryColor,
@@ -401,67 +404,82 @@ void _startAddNewTransaction(BuildContext ctx) {
                                 ),
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(10),
-                                )),
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.add),
+                                ),
+                              ),
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.add),
+                              ),
                             ),
                           ),
-                          Text(
+                          SizedBox(
+                            width: 5,
+                          ),
+                          AutoSizeText(
                             "1",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Container(
-                            padding: EdgeInsets.all(0),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: kPrimaryColor,
-                                width: 1,
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: Container(
+                              padding: EdgeInsets.all(0),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                  color: kPrimaryColor,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
                               ),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(10),
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.remove),
                               ),
-                            ),
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.add),
                             ),
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 20,
                           ),
-                          Container(
-                            padding: EdgeInsets.symmetric(vertical: 12),
-                            decoration: BoxDecoration(
-                              color: Color(0xFFD81B60),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(10),
-                              ),
-                            ),
-                            width: 220,
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  ctx,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return Cart();
-                                    },
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                "ADD TO CART",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600,
+                          Expanded(
+                            flex: 6,
+                            child: Container(
+                              height: 45,
+                              padding: EdgeInsets.symmetric(vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Color(0xFFD81B60),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
                                 ),
-                                textAlign: TextAlign.center,
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    ctx,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return Cart();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Center(
+                                  child: AutoSizeText(
+                                    "ADD TO CART",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -487,7 +505,7 @@ AppBar buildAppBar(BuildContext context) {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return CardInfo();
+                return Finish();
               },
             ),
           );
@@ -500,7 +518,7 @@ AppBar buildAppBar(BuildContext context) {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return UserProfile();
+                return PlaceOrder();
               },
             ),
           );

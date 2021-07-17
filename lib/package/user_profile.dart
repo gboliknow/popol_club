@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:popl_club_8/components/constants.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class UserProfile extends StatelessWidget {
   @override
@@ -117,7 +118,7 @@ class DetailsRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        AutoSizeText(
           name,
           style: TextStyle(
             fontSize: 19,
@@ -125,7 +126,7 @@ class DetailsRow extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        Text(
+        AutoSizeText(
           digit,
           style: TextStyle(
             fontSize: 16,

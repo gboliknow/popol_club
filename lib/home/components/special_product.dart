@@ -66,7 +66,7 @@ class SpecialProductCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Container(
               width: size.width * 0.45,
               decoration: BoxDecoration(
@@ -79,19 +79,16 @@ class SpecialProductCard extends StatelessWidget {
                   fit: BoxFit.cover,
                   image: AssetImage("assets/images/background.png"),
                 ),
-                boxShadow: [],
               ),
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: GestureDetector(
               onTap: press,
               child: Container(
                 padding: EdgeInsets.only(
                   left: kDefaultPadding / 2,
-                  top: kDefaultPadding / 2,
-                  bottom: kDefaultPadding / 2,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,

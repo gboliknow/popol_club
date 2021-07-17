@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:popl_club_8/cart/cart.dart';
 
@@ -43,187 +44,192 @@ class PlaceOrder extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
-              child: GestureDetector(
-                onTap: () {},
-                behavior: HitTestBehavior.opaque,
-                child: Container(
-                    padding: EdgeInsets.only(
-                      top: 2,
-                      left: 2,
-                      right: 2,
-                      bottom: 2,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 4,
-                          child: Container(
-                            padding: EdgeInsets.all(0),
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(10),
-                              ),
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  "assets/images/background.png",
-                                ),
-                              ),
+              child: Container(
+                  padding: EdgeInsets.only(
+                    top: 2,
+                    left: 2,
+                    right: 2,
+                    bottom: 2,
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                          padding: EdgeInsets.all(0),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
                             ),
-                            child: Image.asset(
-                              "assets/images/background.png",
+                            image: DecorationImage(
                               fit: BoxFit.cover,
-                              height: double.infinity,
+                              image: AssetImage(
+                                "assets/images/background.png",
+                              ),
                             ),
                           ),
+                          child: Image.asset(
+                            "assets/images/background.png",
+                            fit: BoxFit.cover,
+                            height: double.infinity,
+                          ),
                         ),
-                        Expanded(
-                          flex: 5,
-                          child: GestureDetector(
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                right: 5,
-                                left: 5,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(00),
-                                  bottomRight: Radius.circular(10),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            right: 5,
+                            left: 5,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(00),
+                              bottomRight: Radius.circular(10),
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "Update\n",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "Self Test",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 17,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  RichText(
-                                    text: TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: "Update\n",
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                          ),
+                              Spacer(),
+                              Row(children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        border: Border.all(
+                                          color: kPrimaryColor,
+                                          width: 2,
                                         ),
-                                        TextSpan(
-                                          text: "Self Test",
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 17,
-                                          ),
-                                        ),
-                                      ],
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(5),
+                                        )),
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.add,
+                                      ),
                                     ),
-                                  ),
-                                  Spacer(),
-                                  Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              border: Border.all(
-                                                color: kPrimaryColor,
-                                                width: 2,
-                                              ),
-                                              borderRadius: BorderRadius.all(
-                                                Radius.circular(5),
-                                              )),
-                                          child: IconButton(
-                                            onPressed: () {},
-                                            icon: Icon(
-                                              Icons.add,
-                                            ),
-                                          ),
-                                        ),
-                                        Text(
-                                          "1",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 19,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        Container(
-                                          padding: EdgeInsets.all(0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            border: Border.all(
-                                              color: kPrimaryColor,
-                                              width: 2,
-                                            ),
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(5),
-                                            ),
-                                          ),
-                                          child: Center(
-                                            child: IconButton(
-                                              onPressed: () {},
-                                              icon: Icon(Icons.add),
-                                            ),
-                                          ),
-                                        ),
-                                      ]),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            flex: 7,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.delete,
-                                    color: kPrimaryColor,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 15,
+                                  width: 2,
                                 ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(vertical: 12),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFD81B60),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(1),
-                                    ),
-                                  ),
-                                  width: double.infinity,
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) {
-                                            return Cart();
-                                          },
-                                        ),
-                                      );
-                                    },
-                                    child: Text(
-                                      "ADD TO CART",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
+                                AutoSizeText(
+                                  "1",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: 2,
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    padding: EdgeInsets.all(0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: kPrimaryColor,
+                                        width: 2,
                                       ),
-                                      textAlign: TextAlign.center,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(5),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.remove),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ))
-                      ],
-                    )),
-              ),
+                              ]),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                          width: 200,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.delete,
+                                  color: kPrimaryColor,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(vertical: 12),
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFD81B60),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(1),
+                                  ),
+                                ),
+                                width: double.infinity,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return Cart();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    "ADD TO CART",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  )),
             ),
             SizedBox(
               height: 10,

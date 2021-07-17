@@ -14,7 +14,7 @@ class Cart extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) {

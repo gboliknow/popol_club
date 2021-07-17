@@ -6,6 +6,7 @@ import 'package:popl_club_8/payment/card.dart';
 class CardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -76,7 +77,7 @@ class CardInfo extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: size.height * 0.03,
             ),
             GestureDetector(
               onTap: () {

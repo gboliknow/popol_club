@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class MyHeader extends StatefulWidget {
@@ -20,7 +21,12 @@ class _MyHeaderState extends State<MyHeader> {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        padding: EdgeInsets.only(left: 40, top: 50, right: 20),
+        padding: EdgeInsets.only(
+          left: 40,
+          top: size.height - (size.height - 30),
+          right: 20,
+          bottom: 0,
+        ),
         height: size.height * 0.25,
         width: double.infinity,
         decoration: BoxDecoration(
@@ -28,19 +34,19 @@ class _MyHeaderState extends State<MyHeader> {
         ),
         child: Column(
           children: [
-            Text(
+            AutoSizeText(
               widget.textTop,
               style: TextStyle(
-                fontSize: 35,
+                fontSize: size.height * 0.04,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 10,
+              height: size.height - (size.height - 5),
             ),
-            Text(
+            AutoSizeText(
               widget.textBottom,
               style: TextStyle(
                 fontSize: 17,
