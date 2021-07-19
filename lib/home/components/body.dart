@@ -27,7 +27,7 @@ class Body extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
-                "Special Product",
+                "Product",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),

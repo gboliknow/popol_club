@@ -21,7 +21,7 @@ class TitleWithMoreBtn extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: Color(0xFFD81B60),
+                color: kPrimaryColor,
               ),
               padding: EdgeInsets.only(
                 top: 8,

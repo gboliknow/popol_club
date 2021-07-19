@@ -117,7 +117,7 @@ class Track extends StatelessWidget {
                   width: size.width * 0.8,
                   padding: EdgeInsets.symmetric(vertical: 12),
                   decoration: BoxDecoration(
-                    color: Color(0xFFD81B60),
+                    color: kPrimaryColor,
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
                     ),
@@ -209,7 +209,7 @@ class Track extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 12),
                   decoration: BoxDecoration(
-                    color: Color(0xFFD81B60),
+                    color: kPrimaryColor,
                     borderRadius: BorderRadius.all(
                       Radius.circular(30),
                     ),

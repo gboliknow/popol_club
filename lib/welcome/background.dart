@@ -14,25 +14,11 @@ class Background extends StatelessWidget {
     return Container(
       height: size.height,
       width: double.infinity,
-      color: Colors.pinkAccent[400],
+      color: Color.fromRGBO(242, 106, 108, 1.0),
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
           child,
-          Positioned(
-              top: -35,
-              left: -85,
-              child: Image.asset(
-                "assets/images/spiral.png",
-                width: size.width * 0.6,
-              )),
-          Positioned(
-              bottom: -45,
-              right: -85,
-              child: Image.asset(
-                "assets/images/spiral.png",
-                width: size.width * 0.6,
-              )),
         ],
       ),
     );

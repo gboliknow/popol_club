@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:popl_club_8/components/my_header.dart';
 
 import 'package:popl_club_8/sign_up/screen.dart';
+import 'package:popl_club_8/components/constants.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -87,7 +88,7 @@ class _SignInState extends State<SignIn> {
                               _passwordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Color(0xFFD81B60),
+                              color: kPrimaryColor,
                             ),
                             onPressed: () {
                               // Update the state i.e. toogle the state of passwordVisible variable
@@ -137,7 +138,7 @@ class _SignInState extends State<SignIn> {
               padding: EdgeInsets.symmetric(vertical: 16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Color(0xFFD81B60)),
+                  color: kPrimaryColor),
               child: Text(
                 "Sign Up with Facebook",
                 style: TextStyle(fontSize: 17, color: Colors.white),
@@ -152,7 +153,7 @@ class _SignInState extends State<SignIn> {
               padding: EdgeInsets.symmetric(vertical: 16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Color(0xFFD81B60)),
+                  color: kPrimaryColor),
               child: Text(
                 "Sign Up with Google",
                 style: TextStyle(fontSize: 17, color: Colors.white),

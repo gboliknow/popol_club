@@ -135,7 +135,7 @@ class _TabsScreenState extends State<TabsScreen> {
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
-        backgroundColor: Color(0xFFD81B60),
+        backgroundColor: kPrimaryColor,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.white,
         currentIndex: _selectedPageIndex,
@@ -143,22 +143,22 @@ class _TabsScreenState extends State<TabsScreen> {
         // type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Color(0xFFD81B60),
+            backgroundColor: kPrimaryColor,
             icon: Icon(Entypo.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Color(0xFFD81B60),
+            backgroundColor: kPrimaryColor,
             icon: Icon(Entypo.newsletter),
             label: 'Blog',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Color(0xFFD81B60),
+            backgroundColor: kPrimaryColor,
             icon: Icon(Entypo.chat),
             label: 'Chats',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Color(0xFFD81B60),
+            backgroundColor: kPrimaryColor,
             icon: Icon(FlutterIcons.account_circle_mco),
             label: 'Profiles',
           ),
@@ -453,7 +453,7 @@ void _startAddNewTransaction(BuildContext ctx) {
                               height: 45,
                               padding: EdgeInsets.symmetric(vertical: 4),
                               decoration: BoxDecoration(
-                                color: Color(0xFFD81B60),
+                                color: kPrimaryColor,
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(10),
                                 ),

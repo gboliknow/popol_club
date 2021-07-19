@@ -60,7 +60,7 @@ class PlaceOrder extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Colors.grey[200],
                             borderRadius: BorderRadius.all(
-                              Radius.circular(10),
+                              Radius.circular(30),
                             ),
                             image: DecorationImage(
                               fit: BoxFit.cover,
@@ -196,7 +196,7 @@ class PlaceOrder extends StatelessWidget {
                               Container(
                                 padding: EdgeInsets.symmetric(vertical: 12),
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFD81B60),
+                                  color: kPrimaryColor,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(1),
                                   ),
@@ -238,7 +238,7 @@ class PlaceOrder extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(vertical: 12),
               decoration: BoxDecoration(
-                color: Color(0xFFD81B60),
+                color: kPrimaryColor,
                 borderRadius: BorderRadius.all(
                   Radius.circular(30),
                 ),

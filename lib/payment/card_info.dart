@@ -93,7 +93,7 @@ class CardInfo extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12),
                 decoration: BoxDecoration(
-                  color: Color(0xFFD81B60),
+                  color: kPrimaryColor,
                   borderRadius: BorderRadius.all(
                     Radius.circular(30),
                   ),

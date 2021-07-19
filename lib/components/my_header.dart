@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:popl_club_8/components/constants.dart';
 
 class MyHeader extends StatefulWidget {
   final String image;
@@ -30,7 +31,7 @@ class _MyHeaderState extends State<MyHeader> {
         height: size.height * 0.25,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFFD81B60),
+          color: kPrimaryColor,
         ),
         child: Column(
           children: [
