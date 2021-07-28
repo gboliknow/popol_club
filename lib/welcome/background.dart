@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:popl_club_8/components/constants.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
@@ -14,7 +15,7 @@ class Background extends StatelessWidget {
     return Container(
       height: size.height,
       width: double.infinity,
-      color: Color.fromRGBO(242, 106, 108, 1.0),
+      color: kPrimaryColor,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[

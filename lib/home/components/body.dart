@@ -14,13 +14,12 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     // it enable scrolling on small device
     return Container(
-      color: Color(0xFFFCE4EC),
+      color: kBackgroundColor.withOpacity(0.9),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             HeaderWithSearchBox(size: size),
-            TitleWithMoreBtn(),
             SizedBox(
               height: 35,
             ),

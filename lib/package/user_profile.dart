@@ -7,97 +7,95 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(22.0),
-          child: Column(
-            children: [
-              Center(
-                child: Container(
-                  padding: EdgeInsets.all(0),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: kPrimaryColor,
-                        width: 3,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(45),
-                      )),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/holder.png"),
-                    radius: 40,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Text(
-                "Muhammad Zain",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-                textAlign: TextAlign.right,
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Text(
-                "Syed Bukhari",
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black,
-                ),
-                textAlign: TextAlign.right,
-              ),
-              SizedBox(
-                height: 36,
-              ),
-              DetailsRow(
-                name: "Phone Number:",
-                digit: "+333************",
-              ),
-              SizedBox(height: 20),
-              DetailsRow(
-                name: "Address:",
-                digit: "2660-6B Razabad Shahshams Road\n Multan, Pakistan",
-              ),
-              SizedBox(height: 20),
-              DetailsRow(
-                name: "Password:",
-                digit: "************",
-              ),
-              SizedBox(height: size.height * 0.4),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 12),
+      body: Padding(
+        padding: const EdgeInsets.all(22.0),
+        child: Column(
+          children: [
+            Center(
+              child: Container(
+                padding: EdgeInsets.all(0),
                 decoration: BoxDecoration(
-                  color: Color(0xFFD81B60),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30),
-                  ),
+                    color: Colors.white,
+                    border: Border.all(
+                      color: kPrimaryColor,
+                      width: 3,
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(45),
+                    )),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/holder.png"),
+                  radius: 40,
                 ),
-                width: size.width * 0.7,
-                height: 49,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Center(
-                    child: Text(
-                      "Save Setting",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                        color: Colors.white,
-                      ),
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              "Muhammad Zain",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.right,
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              "Syed Bukhari",
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.normal,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.right,
+            ),
+            SizedBox(
+              height: 36,
+            ),
+            DetailsRow(
+              name: "Phone Number:",
+              digit: "+333************",
+            ),
+            SizedBox(height: 20),
+            DetailsRow(
+              name: "Address:",
+              digit: "2660-6B Razabad Shahshams Road\n Multan, Pakistan",
+            ),
+            SizedBox(height: 20),
+            DetailsRow(
+              name: "Password:",
+              digit: "************",
+            ),
+            Expanded(child: SizedBox()),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              decoration: BoxDecoration(
+                color: kPrimaryColor,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+              ),
+              width: size.width * 0.7,
+              height: 49,
+              child: GestureDetector(
+                onTap: () {},
+                child: Center(
+                  child: Text(
+                    "Save Setting",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                      color: Colors.white,
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:popl_club_8/cart/place_order.dart';
 import 'package:popl_club_8/components/my_header.dart';
 
 import 'package:popl_club_8/sign_up/screen.dart';
@@ -112,12 +113,21 @@ class _SignInState extends State<SignIn> {
               height: 35,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return PlaceOrder();
+                    },
+                  ),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 16),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Color(0xFFD81B60),
+                  color: kPrimaryColor,
                 ),
                 width: 220,
                 child: Text(
@@ -184,7 +194,7 @@ class _SignInState extends State<SignIn> {
                   child: Text(
                     "SIGN UP",
                     style: TextStyle(
-                        color: Colors.pink,
+                        color: kPrimaryColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.overline),

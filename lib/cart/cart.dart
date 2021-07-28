@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:popl_club_8/cart/body_cart.dart';
 import 'package:popl_club_8/cart/place_order.dart';
 import 'package:popl_club_8/components/constants.dart';
 
@@ -39,80 +40,7 @@ class Cart extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(22.0),
-        child: Column(
-          children: [
-            Expanded(
-                flex: 9,
-                child: Center(
-                  child: Image.asset("assets/images/cart.png"),
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "TOTAL",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
-                ),
-                Text(
-                  "\$$dollars",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 12),
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-              ),
-              width: double.infinity,
-              height: 49,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return PlaceOrder();
-                      },
-                    ),
-                  );
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Continue",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            )
-          ],
-        ),
-      ),
+      body: BodyCart(),
     );
   }
 }

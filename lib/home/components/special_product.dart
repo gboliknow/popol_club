@@ -61,16 +61,15 @@ class SpecialProductCard extends StatelessWidget {
         top: kDefaultPadding / 1,
         bottom: kDefaultPadding / 2.5,
       ),
-      width: size.width * 0.45,
+      width: size.width * 0.9,
       height: size.height * 0.2,
       child: Column(
         children: <Widget>[
           Expanded(
             flex: 4,
             child: Container(
-              width: size.width * 0.45,
+              width: size.width * 0.9,
               decoration: BoxDecoration(
-                color: Colors.black38,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
@@ -96,13 +95,6 @@ class SpecialProductCard extends StatelessWidget {
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      blurRadius: 90,
-                      color: kPrimaryColor.withOpacity(0.23),
-                    ),
-                  ],
                 ),
                 child: Row(
                   children: <Widget>[

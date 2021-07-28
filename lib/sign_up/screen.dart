@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:popl_club_8/cart/place_order.dart';
 import 'package:popl_club_8/components/my_header.dart';
 
 import 'package:popl_club_8/home/tabs_screen.dart';
@@ -153,7 +154,7 @@ class _SignUpState extends State<SignUp> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return TabsScreen();
+                      return PlaceOrder();
                     },
                   ),
                 );

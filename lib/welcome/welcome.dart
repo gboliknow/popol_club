@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:popl_club_8/sign_up/screen.dart';
+import 'package:popl_club_8/home/tabs_screen.dart';
 import 'package:popl_club_8/welcome/background.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -12,37 +12,31 @@ class WelcomeScreen extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return SignUp();
+                return TabsScreen();
               },
             ),
           );
         },
         child: Background(
           child: Center(
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Spacer(),
                 Image.asset(
                   "assets/images/logo.png",
                   height: 100,
                 ),
+                SizedBox(
+                  width: 5,
+                ),
                 Text(
                   "Popol Club",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 55,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  "“Le partenaire de votre plaisir securitaire”",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white,
-                  ),
-                ),
-                Spacer()
               ],
             ),
           ),

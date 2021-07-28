@@ -65,13 +65,13 @@ class CardInfo extends StatelessWidget {
                   ),
                   CardDetails(
                     name: "assets/images/card2.png",
-                    title: "Bank transfer",
-                    subtitle: "Transfer money from your bank",
+                    title: "Google Play",
+                    subtitle: "Pay with Google play",
                   ),
                   CardDetails(
                     name: "assets/images/card3.png",
-                    title: "Other payment methods",
-                    subtitle: "View other payment options",
+                    title: "PayPal",
+                    subtitle: "Pay with PayPal",
                   ),
                 ],
               ),

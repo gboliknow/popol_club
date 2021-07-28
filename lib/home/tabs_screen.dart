@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:popl_club_8/cart/body_cart.dart';
 
 import 'package:popl_club_8/cart/cart.dart';
 import 'package:popl_club_8/cart/place_order.dart';
@@ -14,6 +15,7 @@ import 'package:popl_club_8/package/finish.dart';
 
 import 'package:popl_club_8/package/user_profile.dart';
 import 'package:popl_club_8/payment/card_info.dart';
+import 'package:popl_club_8/sign_up/screen.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -40,6 +42,10 @@ class _TabsScreenState extends State<TabsScreen> {
         'title': 'Your Chat',
       },
       {
+        'page': BodyCart(),
+        'title': 'Your Chat',
+      },
+      {
         'page': Chat(),
         'title': 'Your Blog',
       },
@@ -51,8 +57,7 @@ class _TabsScreenState extends State<TabsScreen> {
     _title = "jhkh";
     _title2 = Colors.black;
     _title3 = false;
-    _title4 = AntDesign.bells;
-
+    _title4;
     super.initState();
   }
 
@@ -70,12 +75,19 @@ class _TabsScreenState extends State<TabsScreen> {
           break;
         case 2:
           {
+            _title = 'Cart';
+            _title2 = kPrimaryColor;
+            _title3 = true;
+          }
+          break;
+        case 3:
+          {
             _title = 'La Piara';
             _title2 = kPrimaryColor;
             _title3 = false;
           }
           break;
-        case 3:
+        case 4:
           {
             _title = 'User Profile';
             _title2 = Colors.black;
@@ -136,7 +148,7 @@ class _TabsScreenState extends State<TabsScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         backgroundColor: kPrimaryColor,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.grey.withOpacity(0.7),
         selectedItemColor: Colors.white,
         currentIndex: _selectedPageIndex,
         iconSize: 28,
@@ -151,6 +163,11 @@ class _TabsScreenState extends State<TabsScreen> {
             backgroundColor: kPrimaryColor,
             icon: Icon(Entypo.newsletter),
             label: 'Blog',
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: kPrimaryColor,
+            icon: Icon(AntDesign.shoppingcart),
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             backgroundColor: kPrimaryColor,
@@ -234,25 +251,6 @@ Drawer buildDrawer(BuildContext context) {
         ),
         ListTile(
           leading: Icon(
-            Icons.account_circle,
-            color: kPrimaryColor,
-          ),
-          title: Text('Who we are'),
-          trailing: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WhoAreWe();
-                    },
-                  ),
-                );
-              },
-              child: Icon(Icons.arrow_forward_ios)),
-        ),
-        ListTile(
-          leading: Icon(
             Entypo.shopping_cart,
             color: kPrimaryColor,
           ),
@@ -309,7 +307,7 @@ void _startAddNewTransaction(BuildContext ctx) {
     builder: (_) {
       int dollars = 10;
       return Container(
-        height: size.height * 0.35,
+        height: size.height * 0.3,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -394,61 +392,13 @@ void _startAddNewTransaction(BuildContext ctx) {
                             width: 5,
                           ),
                           Expanded(
-                            child: Container(
-                              padding: EdgeInsets.all(0),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: kPrimaryColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.add),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          AutoSizeText(
-                            "1",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Expanded(
-                            child: Container(
-                              padding: EdgeInsets.all(0),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: kPrimaryColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.remove),
-                              ),
-                            ),
+                            child: _buildCounter(),
                           ),
                           SizedBox(
                             width: 20,
                           ),
                           Expanded(
-                            flex: 6,
+                            flex: 2,
                             child: Container(
                               height: 45,
                               padding: EdgeInsets.symmetric(vertical: 4),
@@ -464,7 +414,7 @@ void _startAddNewTransaction(BuildContext ctx) {
                                     ctx,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return Cart();
+                                        return SignUp();
                                       },
                                     ),
                                   );
@@ -474,7 +424,7 @@ void _startAddNewTransaction(BuildContext ctx) {
                                     "ADD TO CART",
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 17,
+                                      fontSize: 19,
                                       fontWeight: FontWeight.w600,
                                     ),
                                     textAlign: TextAlign.center,
@@ -499,19 +449,6 @@ AppBar buildAppBar(BuildContext context) {
     title: Text("Popol club"),
     backgroundColor: Colors.transparent,
     actions: [
-      IconButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return Finish();
-              },
-            ),
-          );
-        },
-        icon: Icon(AntDesign.bells),
-      ),
       IconButton(
         onPressed: () {
           Navigator.push(
@@ -563,5 +500,46 @@ AppBar buildAppBarblog(BuildContext context) {
         width: 2,
       ),
     ],
+  );
+}
+
+Widget _buildCounter() {
+  return Container(
+    decoration: BoxDecoration(
+      color: kPrimaryColor,
+      borderRadius: BorderRadius.all(
+        Radius.circular(12),
+      ),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.remove,
+            color: Colors.white,
+          ),
+          onPressed: null,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 11),
+          child: Text(
+            "1",
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+        IconButton(
+          icon: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          onPressed: null,
+        ),
+      ],
+    ),
   );
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:popl_club_8/cart/cart.dart';
 
 import 'package:popl_club_8/components/constants.dart';
+import 'package:popl_club_8/home/tabs_screen.dart';
 import 'package:popl_club_8/payment/card_info.dart';
 
 class PlaceOrder extends StatelessWidget {
@@ -17,7 +18,14 @@ class PlaceOrder extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return TabsScreen();
+                },
+              ),
+            );
           },
           icon: Icon(
             Icons.arrow_back_ios,
@@ -116,61 +124,7 @@ class PlaceOrder extends StatelessWidget {
                                 ),
                               ),
                               Spacer(),
-                              Row(children: [
-                                Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        border: Border.all(
-                                          color: kPrimaryColor,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(5),
-                                        )),
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.add,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 2,
-                                ),
-                                AutoSizeText(
-                                  "1",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  width: 2,
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    padding: EdgeInsets.all(0),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(
-                                        color: kPrimaryColor,
-                                        width: 2,
-                                      ),
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(5),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(Icons.remove),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ]),
+                              _buildCounter(),
                             ],
                           ),
                         ),
@@ -178,16 +132,18 @@ class PlaceOrder extends StatelessWidget {
                       Expanded(
                         flex: 3,
                         child: Container(
-                          width: 200,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.delete,
-                                  color: kPrimaryColor,
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.delete,
+                                    color: kPrimaryColor,
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -198,7 +154,7 @@ class PlaceOrder extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   color: kPrimaryColor,
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(1),
+                                    Radius.circular(10),
                                   ),
                                 ),
                                 width: double.infinity,
@@ -234,7 +190,7 @@ class PlaceOrder extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Spacer(),
+            Expanded(child: SizedBox()),
             Container(
               padding: EdgeInsets.symmetric(vertical: 12),
               decoration: BoxDecoration(
@@ -251,7 +207,7 @@ class PlaceOrder extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return CardInfo();
+                        return Cart();
                       },
                     ),
                   );
@@ -276,4 +232,43 @@ class PlaceOrder extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _buildCounter() {
+  return Container(
+    height: 39,
+    decoration: BoxDecoration(
+      color: kPrimaryColor,
+      borderRadius: BorderRadius.all(
+        Radius.circular(10),
+      ),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.remove,
+            color: Colors.white,
+          ),
+          onPressed: null,
+        ),
+        Text(
+          "1",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
+        IconButton(
+          icon: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          onPressed: null,
+        ),
+      ],
+    ),
+  );
 }

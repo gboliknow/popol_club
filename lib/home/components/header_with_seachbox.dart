@@ -15,12 +15,8 @@ class HeaderWithSearchBox extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 0.3),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(36),
-          bottomRight: Radius.circular(36),
-        ),
         image: DecorationImage(
-          fit: BoxFit.cover,
+          fit: BoxFit.fitWidth,
           image: AssetImage("assets/images/background.png"),
         ),
       ),
@@ -35,12 +31,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               bottom: 36 + kDefaultPadding,
             ),
             height: size.height * 0.2 - 37,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(36),
-                bottomRight: Radius.circular(36),
-              ),
-            ),
+            decoration: BoxDecoration(),
           ),
         ],
       ),
